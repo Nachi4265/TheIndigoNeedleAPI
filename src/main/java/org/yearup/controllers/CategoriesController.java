@@ -16,10 +16,11 @@ import java.util.List;
 
 
 
-@RestController// add the annotations to make this a REST controller ✓
+
 @RequestMapping("categories")// add the annotation to make this controller the endpoint for the following url
 // http://localhost:8080/categories ✓
 @CrossOrigin// add annotation to allow cross site origin requests ✓
+@RestController// add the annotations to make this a REST controller ✓
 public class CategoriesController
 {
     private CategoryDao categoryDao;
@@ -61,7 +62,7 @@ public class CategoriesController
     // add annotation to call this method for a POST action ✓
     // add annotation to ensure that only an ADMIN can call this function ✓
     @RequestMapping(path="/categories", method = RequestMethod.POST)
-    @PreAuthorize("ROLE_ADMIN")
+    @PreAuthorize("hasRole('ADMIN')")
     public Category addCategory(@RequestBody Category category)
     {
         // insert the category ✓
@@ -71,7 +72,7 @@ public class CategoriesController
     // add annotation to call this method for a PUT (update) action - the url path must include the categoryId ✓
     // add annotation to ensure that only an ADMIN can call this function ✓
     @RequestMapping(path = "/category/{ID}" , method = RequestMethod.PUT)
-    @PreAuthorize("ROLE_ADMIN")
+    @PreAuthorize("hasRole('ADMIN')")
     public void updateCategory(@PathVariable int id, @RequestBody Category category)
     {
 
@@ -83,7 +84,7 @@ public class CategoriesController
     // add annotation to call this method for a DELETE action - the url path must include the categoryId ✓
     // add annotation to ensure that only an ADMIN can call this function ✓
     @RequestMapping(path = "/category/{ID}" , method = RequestMethod.DELETE)
-    @PreAuthorize("ROLE_ADMIN")
+    @PreAuthorize("hasRole('ADMIN')")
     public void deleteCategory(@PathVariable int id)
     {
         categoryDao.delete(id);
