@@ -35,7 +35,7 @@ public class CategoriesController
     }
 
     // add the appropriate annotation for a get action ✓
-    @RequestMapping(path="/categories", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public List<Category> getAll()
     {
         // find and return all categories✓
@@ -43,7 +43,7 @@ public class CategoriesController
     }
 
     // add the appropriate annotation for a get action ✓
-    @RequestMapping(path= "/category/{id}", method = RequestMethod.GET)
+    @RequestMapping(path= "/{id}", method = RequestMethod.GET)
     public Category getById(@PathVariable int id)
     {
         // get the category by id ✓
@@ -61,7 +61,7 @@ public class CategoriesController
 
     // add annotation to call this method for a POST action ✓
     // add annotation to ensure that only an ADMIN can call this function ✓
-    @RequestMapping(path="/categories", method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     @PreAuthorize("hasRole('ADMIN')")
     public Category addCategory(@RequestBody Category category)
     {
@@ -71,11 +71,10 @@ public class CategoriesController
 
     // add annotation to call this method for a PUT (update) action - the url path must include the categoryId ✓
     // add annotation to ensure that only an ADMIN can call this function ✓
-    @RequestMapping(path = "/category/{ID}" , method = RequestMethod.PUT)
+    @RequestMapping(path = "/{id}" , method = RequestMethod.PUT)
     @PreAuthorize("hasRole('ADMIN')")
     public void updateCategory(@PathVariable int id, @RequestBody Category category)
     {
-
         // update the category by id ✓
          categoryDao.update(id,category);
     }
@@ -83,7 +82,7 @@ public class CategoriesController
 
     // add annotation to call this method for a DELETE action - the url path must include the categoryId ✓
     // add annotation to ensure that only an ADMIN can call this function ✓
-    @RequestMapping(path = "/category/{ID}" , method = RequestMethod.DELETE)
+    @RequestMapping(path = "/{id}" , method = RequestMethod.DELETE)
     @PreAuthorize("hasRole('ADMIN')")
     public void deleteCategory(@PathVariable int id)
     {
