@@ -43,7 +43,7 @@ public class CategoriesController
     }
 
     // add the appropriate annotation for a get action ✓
-    @RequestMapping(path= "/{id}", method = RequestMethod.GET)
+    @RequestMapping(path = "/{id}", method = RequestMethod.GET)
     public Category getById(@PathVariable int id)
     {
         // get the category by id ✓
@@ -61,8 +61,8 @@ public class CategoriesController
 
     // add annotation to call this method for a POST action ✓
     // add annotation to ensure that only an ADMIN can call this function ✓
-    @RequestMapping(method = RequestMethod.POST)
-    @PreAuthorize("hasRole('ADMIN')")
+    @RequestMapping( method = RequestMethod.POST)
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public Category addCategory(@RequestBody Category category)
     {
         // insert the category ✓
@@ -72,7 +72,7 @@ public class CategoriesController
     // add annotation to call this method for a PUT (update) action - the url path must include the categoryId ✓
     // add annotation to ensure that only an ADMIN can call this function ✓
     @RequestMapping(path = "/{id}" , method = RequestMethod.PUT)
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public void updateCategory(@PathVariable int id, @RequestBody Category category)
     {
         // update the category by id ✓
@@ -83,7 +83,7 @@ public class CategoriesController
     // add annotation to call this method for a DELETE action - the url path must include the categoryId ✓
     // add annotation to ensure that only an ADMIN can call this function ✓
     @RequestMapping(path = "/{id}" , method = RequestMethod.DELETE)
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public void deleteCategory(@PathVariable int id)
     {
         categoryDao.delete(id);

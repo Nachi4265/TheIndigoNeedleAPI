@@ -33,10 +33,10 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
 
             while(results.next()){
 
-                int categoryiD = results.getInt(1);
+                int categoryId = results.getInt(1);
                 String categoryName = results.getString(2);
                 String description = results.getString(3);
-                categories.add(new Category());
+                categories.add(new Category(categoryId,categoryName,description));
             }
         }catch (SQLException e ){
             System.out.println("Error :" + e.getMessage());
@@ -107,7 +107,7 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
         } catch (SQLException e) {
             System.out.println("Error :" + e.getMessage());;
         }
-        return null;
+        return category;
     }
 
     @Override
