@@ -35,7 +35,7 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
                 categories.add(mapRow(results));
             }
         }catch (SQLException e ){
-            System.out.println("Error :" + e.getMessage());
+            throw new RuntimeException(e);
         }
 
         // get all categories
@@ -98,6 +98,7 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
         } catch (SQLException e) {
             System.out.println("Error :" + e.getMessage());;
         }
+
         return category;
     }
 

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 import org.yearup.data.CategoryDao;
 import org.yearup.data.ProductDao;
 import org.yearup.data.mysql.MySqlCategoryDao;
@@ -39,7 +40,14 @@ public class CategoriesController
     public List<Category> getAll()
     {
         // find and return all categories✓
-        return categoryDao.getAllCategories();
+
+        List<Category> categories = categoryDao.getAllCategories();
+
+        if(categories == null){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+
+        return categories;
     }
 
     // add the appropriate annotation for a get action ✓
@@ -47,7 +55,14 @@ public class CategoriesController
     public Category getById(@PathVariable int id)
     {
         // get the category by id ✓
-        return categoryDao.getById(id);
+
+            Category categoryByID = categoryDao.getById(id);
+
+            if (categoryByID == null){
+                throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+            }
+            return categoryByID;
+
     }
 
     // the url to return all products in category 1 would look like this ✓
