@@ -105,5 +105,6 @@ public class CategoriesController
     {
         categoryDao.delete(id);
         // delete the category by id ✓
+
     }
 }
