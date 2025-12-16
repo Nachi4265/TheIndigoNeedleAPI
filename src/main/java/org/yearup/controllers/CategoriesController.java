@@ -63,6 +63,7 @@ public class CategoriesController
     // add annotation to ensure that only an ADMIN can call this function ✓
     @RequestMapping( method = RequestMethod.POST)
     @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @ResponseStatus(HttpStatus.CREATED)
     public Category addCategory(@RequestBody Category category)
     {
         // insert the category ✓
@@ -84,6 +85,7 @@ public class CategoriesController
     // add annotation to ensure that only an ADMIN can call this function ✓
     @RequestMapping(path = "/{id}" , method = RequestMethod.DELETE)
     @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteCategory(@PathVariable int id)
     {
         categoryDao.delete(id);

@@ -32,11 +32,7 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
             ResultSet results = statement.executeQuery()){
 
             while(results.next()){
-
-                int categoryId = results.getInt(1);
-                String categoryName = results.getString(2);
-                String description = results.getString(3);
-                categories.add(new Category(categoryId,categoryName,description));
+                categories.add(mapRow(results));
             }
         }catch (SQLException e ){
             System.out.println("Error :" + e.getMessage());
@@ -64,12 +60,7 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
             try(ResultSet results = statement.executeQuery()){
 
                 if(results.next()){
-
-                    int categoryID = results.getInt(1);
-                    String categoryName = results.getString(2);
-                    String categoryDescription = results.getString(3);
-
-                    categoryByID = new Category(categoryID,categoryName, categoryDescription);
+                    categoryByID = mapRow(results);
                 }
             }
         } catch (SQLException e) {
@@ -84,14 +75,14 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
     public Category create(Category category)
     {
         // create a new category
-        String query = "INSERT INTO categories (category_id , name , description ) Values ( ? , ? , ? )";
+        String query = "INSERT INTO categories ( name , description ) Values ( ? , ? )";
 
         try(Connection connection = super.getConnection();
             PreparedStatement statement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
         ){
-            statement.setInt(1,category.getCategoryId());
-            statement.setString(2,category.getName());
-            statement.setString(3,category.getDescription());
+
+            statement.setString(1,category.getName());
+            statement.setString(2,category.getDescription());
 
             int rows = statement.executeUpdate();
 
