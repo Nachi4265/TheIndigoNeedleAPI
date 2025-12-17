@@ -36,7 +36,7 @@ public class CategoriesController
     }
 
     // add the appropriate annotation for a get action ✓
-    @RequestMapping(method = RequestMethod.GET)
+    @GetMapping
     public List<Category> getAll()
     {
         // find and return all categories✓
@@ -51,7 +51,7 @@ public class CategoriesController
     }
 
     // add the appropriate annotation for a get action ✓
-    @RequestMapping(path = "/{id}", method = RequestMethod.GET)
+    @GetMapping("/{id}")
     public Category getById(@PathVariable int id)
     {
         // get the category by id ✓
@@ -76,7 +76,7 @@ public class CategoriesController
 
     // add annotation to call this method for a POST action ✓
     // add annotation to ensure that only an ADMIN can call this function ✓
-    @RequestMapping( method = RequestMethod.POST)
+    @PostMapping
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @ResponseStatus(HttpStatus.CREATED)
     public Category addCategory(@RequestBody Category category)
@@ -87,24 +87,24 @@ public class CategoriesController
 
     // add annotation to call this method for a PUT (update) action - the url path must include the categoryId ✓
     // add annotation to ensure that only an ADMIN can call this function ✓
-    @RequestMapping(path = "/{id}" , method = RequestMethod.PUT)
+    @PutMapping("/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public void updateCategory(@PathVariable int id, @RequestBody Category category)
     {
         // update the category by id ✓
-         categoryDao.update(id,category);
+        categoryDao.update(id,category);
     }
 
 
     // add annotation to call this method for a DELETE action - the url path must include the categoryId ✓
     // add annotation to ensure that only an ADMIN can call this function ✓
-    @RequestMapping(path = "/{id}" , method = RequestMethod.DELETE)
+    @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteCategory(@PathVariable int id)
     {
-        categoryDao.delete(id);
-        // delete the category by id ✓
+        categoryDao.delete(id); // delete the category by id ✓
+
 
     }
 }
