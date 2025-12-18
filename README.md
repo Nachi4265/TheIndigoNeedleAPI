@@ -50,6 +50,12 @@ It has options for each of the CRUD operations
 this can be shortened too  
 @GetMapping("/products/{ID}")  
 
+## Technology Used
+SpringBoot  
+MySQL Workbench  
+IntelliJ  
+Insomnia  
+
 
 
 
