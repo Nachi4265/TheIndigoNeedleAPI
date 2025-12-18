@@ -18,7 +18,7 @@ Bug 1 - Search Functionality: Fixed incorrect product search results when filter
 Bug 2 - Product Duplication: Resolved an issue where updating products created duplicates instead of modifying the existing record. The controller was incorrectly calling create() instead of update().  
 
 
-# Technologies Used 🛠️
+# Technologies Used 
 
 Spring Boot - Backend framework  
 MySQL - Database management  
