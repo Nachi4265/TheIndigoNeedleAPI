@@ -28,7 +28,34 @@ Spring Security - Authentication and authorization
 JWT - Token-based authentication  
 
 
-# ScreenShots
+# Running the Application 
+Prerequisites
+
+Java 17 or higher  
+MySQL Server  
+Maven  
+
+## Steps
+
+Clone the repository  
+
+bashgit clone [your-repository-url]  
+cd indigo-needle-api  
+
+Configure database connection in application.properties  
+
+propertiesspring.datasource.url=jdbc:mysql://localhost:3306/recordshop  
+spring.datasource.username=your_username  
+spring.datasource.password=your_password  
+
+Run the application  
+
+bashmvn spring-boot:run  
+
+The API will be available at http://localhost:8080  
+
+
+# ScreenShots  
 
 ### All Products
 <img width="400" height="400" alt="All Products" src="https://github.com/user-attachments/assets/87147738-4ae3-44ce-b6d8-ebef7f5e8ce8" />
