@@ -1,8 +1,34 @@
 # The Indigo Needle API 
 ### Description: This capstone is an e-commerce application, or an online store. The website uses a Spring Boot API project for the backend server, with a MySQL database for data storage.
 
+## Features Implemented 
+### Phase 1: Categories Management
 
-## ScreenShots
+GET all categories
+GET category by ID
+GET all products in a specific category
+POST create new category (Admin only)
+PUT update existing category (Admin only)
+DELETE remove category (Admin only)
+
+### Phase 2: Bug Fixes
+
+Bug 1 - Search Functionality: Fixed incorrect product search results when filtering by price range. The maxPrice parameters were missing from the SQL query, causing filters to return inaccurate results.
+Bug 2 - Product Duplication: Resolved an issue where updating products created duplicates instead of modifying the existing record. The controller was incorrectly calling create() instead of update().
+
+
+# Technologies Used 🛠️
+
+Spring Boot - Backend framework
+MySQL - Database management
+MySQL Workbench - Database design and management
+IntelliJ IDEA - IDE
+Insomnia/Postman - API testing
+Spring Security - Authentication and authorization
+JWT - Token-based authentication
+
+
+# ScreenShots
 
 ### All Products
 <img width="400" height="400" alt="All Products" src="https://github.com/user-attachments/assets/87147738-4ae3-44ce-b6d8-ebef7f5e8ce8" />
@@ -50,19 +76,23 @@ It has options for each of the CRUD operations
 this can be shortened too  
 @GetMapping("/products/{ID}")  
 
-## Technology Used
-SpringBoot  
-MySQL Workbench  
-IntelliJ  
-Insomnia  
-
-#Lessons Learned 📚
+# Lessons Learned 📚
 
 Importance of thorough testing for search and filter functionality  
 Distinguishing between create and update operations in REST APIs  
 Implementing role-based access control with Spring Security  
 Debugging SQL queries with multiple parameters  
 Best practices for RESTful API design  
+
+# Acknowledgments 🙏
+
+Year Up United for the project framework
+Pluralsight for the learning resources
+The Spring Boot community for excellent documentation
+
+
+# License 📄
+This project was created as part of the Year Up United Java Development program.
 
 
 
