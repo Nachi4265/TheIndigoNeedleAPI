@@ -118,6 +118,16 @@ Year Up United for the project framework
 Pluralsight for the learning resources
 The Spring Boot community for excellent documentation
 
+## Resources 
+https://docs.spring.io/spring-boot/reference/using/using-the-springbootapplication-annotation.html  
+https://www.baeldung.com/spring-request-method-not-supported-405  
+https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/ResponseStatus.html  
+https://developer.konghq.com/insomnia/requests/  
+https://developer.konghq.com/insomnia/request-authentication/  
+https://www.jwt.io/  
+https://restfulapi.net/http-status-codes/#2xx  
+https://dev.mysql.com/doc/workbench/en/wb-develop-sql-editor-history.html  
+
 
 # License 📄
 This project was created as part of the Year Up United Java Development program.
