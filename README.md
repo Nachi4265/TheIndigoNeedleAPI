@@ -38,6 +38,14 @@ Status Code are 3 digit numbers sent from the server to the client to illustrate
 
 ## Intresting Piece of Code:
 ### Request Mapping Shortcuts
+@RequestMapping(path="/somepath", method = RequestMethod.GET)
+It has options for each of the CRUD operations 
+
+@GetMapping  
+@PostMapping  
+@PutMapping  
+@DeleteMapping  
+
 @RequestMapping(path="/products/{ID}",method = RequestMethod.GET)  
 this can be shortened too  
 @GetMapping("/products/{ID}")  
