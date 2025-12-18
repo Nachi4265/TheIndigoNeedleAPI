@@ -4,12 +4,12 @@
 ## Features Implemented 
 ### Phase 1: Categories Management
 
-GET all categories
-GET category by ID
-GET all products in a specific category
-POST create new category (Admin only)
-PUT update existing category (Admin only)
-DELETE remove category (Admin only)
+GET all categories  
+GET category by ID  
+GET all products in a specific category  
+POST create new category (Admin only)  
+PUT update existing category (Admin only)  
+DELETE remove category (Admin only)  
 
 ### Phase 2: Bug Fixes
 
@@ -19,13 +19,13 @@ Bug 2 - Product Duplication: Resolved an issue where updating products created d
 
 # Technologies Used 🛠️
 
-Spring Boot - Backend framework
-MySQL - Database management
-MySQL Workbench - Database design and management
-IntelliJ IDEA - IDE
-Insomnia/Postman - API testing
-Spring Security - Authentication and authorization
-JWT - Token-based authentication
+Spring Boot - Backend framework  
+MySQL - Database management  
+MySQL Workbench - Database design and management  
+IntelliJ IDEA - IDE  
+Insomnia/Postman - API testing  
+Spring Security - Authentication and authorization  
+JWT - Token-based authentication  
 
 
 # ScreenShots
