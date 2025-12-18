@@ -29,3 +29,5 @@
 <img width="400" height="400" alt="Product Controller" src="https://github.com/user-attachments/assets/479a7b0d-dbc0-4021-86e5-e002c7371655" />
 
 
+## Intresting Piece of Code:
+
