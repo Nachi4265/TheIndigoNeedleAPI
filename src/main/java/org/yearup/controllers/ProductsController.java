@@ -24,7 +24,7 @@ public class ProductsController
         this.productDao = productDao;
     }
 
-    @GetMapping("")
+    @GetMapping()
     @PreAuthorize("permitAll()")
     public List<Product> search(@RequestParam(name="cat", required = false) Integer categoryId,
                                 @RequestParam(name="minPrice", required = false) BigDecimal minPrice,
@@ -81,6 +81,10 @@ public class ProductsController
     {
         try
         {
+            //Before - creating a product
+            //productDao.create(product);
+
+            //After - updating a product
             productDao.update(id,product);
         }
         catch(Exception ex)

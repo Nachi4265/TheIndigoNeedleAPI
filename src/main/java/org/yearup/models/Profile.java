@@ -1,5 +1,7 @@
 package org.yearup.models;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class Profile
 {
     private int userId;
@@ -12,10 +14,12 @@ public class Profile
     private String state = "";
     private String zip = "";
 
+
     public Profile()
     {
     }
 
+    //@Autowired
     public Profile(int userId, String firstName, String lastName, String phone, String email, String address, String city, String state, String zip)
     {
         this.userId = userId;
@@ -28,6 +32,7 @@ public class Profile
         this.state = state;
         this.zip = zip;
     }
+
 
     public int getUserId()
     {
