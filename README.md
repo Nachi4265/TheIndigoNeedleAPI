@@ -56,6 +56,13 @@ MySQL Workbench
 IntelliJ  
 Insomnia  
 
+#Lessons Learned 📚
+
+Importance of thorough testing for search and filter functionality  
+Distinguishing between create and update operations in REST APIs  
+Implementing role-based access control with Spring Security  
+Debugging SQL queries with multiple parameters  
+Best practices for RESTful API design  
 
 
 
