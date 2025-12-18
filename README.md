@@ -28,9 +28,7 @@
 ### Product Controller
 <img width="400" height="400" alt="Product Controller" src="https://github.com/user-attachments/assets/479a7b0d-dbc0-4021-86e5-e002c7371655" />
 
-
-## Intresting Piece of Code:
-### Status Codes
+## Status Codes
 Status Code are 3 digit numbers sent from the server to the client to illustrate there was an error. 
   100's : Informational
   200's : Success
@@ -38,7 +36,12 @@ Status Code are 3 digit numbers sent from the server to the client to illustrate
   400's : Client Error
   500's : Server Error
 
-
+## Intresting Piece of Code:
 ### Request Mapping Shortcuts
+ @RequestMapping(path="/products/{ID}",method = RequestMethod.GET) 
+ this can be shortened too 
+ @GetMapping("/products/{ID}")
+
+
 
 
