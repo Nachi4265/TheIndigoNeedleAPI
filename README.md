@@ -30,17 +30,17 @@
 
 ## Status Codes
 Status Code are 3 digit numbers sent from the server to the client to illustrate there was an error. 
-  100's : Informational
-  200's : Success
-  300's : Redirection
-  400's : Client Error
-  500's : Server Error
+  100's : Informational  
+  200's : Success  
+  300's : Redirection  
+  400's : Client Error  
+  500's : Server Error  
 
 ## Intresting Piece of Code:
 ### Request Mapping Shortcuts
-  @RequestMapping(path="/products/{ID}",method = RequestMethod.GET) 
-   this can be shortened too 
-   @GetMapping("/products/{ID}")
+@RequestMapping(path="/products/{ID}",method = RequestMethod.GET)  
+this can be shortened too  
+@GetMapping("/products/{ID}")  
 
 
 
