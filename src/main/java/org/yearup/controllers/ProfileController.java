@@ -18,18 +18,17 @@ import org.yearup.models.Profile;
 public class ProfileController {
 
 
-    MySqlProfileDao mySqlProfileDao;
+    MySqlProfileDao ProfileDao;
 
     public ProfileController(MySqlProfileDao mySqlProfileDao) {
-        this.mySqlProfileDao = mySqlProfileDao;
+        this.ProfileDao = mySqlProfileDao;
     }
-
-    @GetMapping("{id}")
+    @GetMapping
     @PreAuthorize("hasRole('ROLE_USER')")
-    public Profile getProfile(@PathVariable int id)
+    public Profile getProfiles()
     {
 
-        Profile profile = mySqlProfileDao.getProfile(id);
+        Profile profile = ProfileDao.getProfile();
 
         if (profile == null){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
@@ -38,22 +37,42 @@ public class ProfileController {
 
     }
 
-    @PutMapping
-    @PreAuthorize("'ROLE_USER'")
+    @GetMapping("{id}")
+    @PreAuthorize("hasRole('ROLE_USER')")
+    public Profile getProfileByID(@PathVariable int id)
+    {
+
+        Profile profile = ProfileDao.getProfileByID(id);
+
+        if (profile == null){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+        return profile;
+
+    }
+
+    @PostMapping
+    @PreAuthorize("hasRole('ROLE_USER')")
     public Profile createProfile(Profile profile){
 
-        try
-        {
-            mySqlProfileDao.create(profile);
-
+        try{
+            ProfileDao.create(profile);
         }
         catch(Exception ex)
         {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Oops... our bad.");
         }
 
-        return null;
+        return profile;
 
+    }
+
+    @PutMapping
+    @PreAuthorize("hasRole('ROLE_USER')")
+    public Profile updateProfile(@RequestBody Profile profile){
+
+        ProfileDao.update(profile);
+        return profile;
     }
 
 
