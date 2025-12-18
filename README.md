@@ -14,6 +14,7 @@ DELETE remove category (Admin only)
 ### Phase 2: Bug Fixes
 
 Bug 1 - Search Functionality: Fixed incorrect product search results when filtering by price range. The maxPrice parameters were missing from the SQL query, causing filters to return inaccurate results.  
+
 Bug 2 - Product Duplication: Resolved an issue where updating products created duplicates instead of modifying the existing record. The controller was incorrectly calling create() instead of update().  
 
 
