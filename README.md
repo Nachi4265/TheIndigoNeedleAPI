@@ -30,4 +30,13 @@
 
 
 ## Intresting Piece of Code:
+### Status Codes
+Status Code are 3 digit numbers sent from the server to the client to illustrate there was an error. 
+100's : Informational  |  200's : Success
+300's : Redirection    |  400's : Client Error
+500's : Server Error
+
+
+### Request Mapping Shortcuts
+
 
