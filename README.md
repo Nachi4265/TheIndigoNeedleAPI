@@ -104,7 +104,7 @@ It has options for each of the CRUD operations
 this can be shortened too  
 @GetMapping("/products/{ID}")  
 
-# Lessons Learned 📚
+# Lessons Learned 
 
 Importance of thorough testing for search and filter functionality  
 Distinguishing between create and update operations in REST APIs  
@@ -112,7 +112,7 @@ Implementing role-based access control with Spring Security
 Debugging SQL queries with multiple parameters  
 Best practices for RESTful API design  
 
-# Acknowledgments 🙏
+# Acknowledgments 
 
 Year Up United for the project framework
 Pluralsight for the learning resources
